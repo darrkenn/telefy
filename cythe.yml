@@ -2,3 +2,9 @@ image: darrkenn/cythe-rust:latest
 steps:
   - name: Checkout repo
     use: cythe-checkout
+  - name: Run tests
+    run: cargo test -q
+  - name: Dry run publish
+    run: cargo publish --dry-run
+  - name: Publish to crates.io
+    run: cargo publish --token ${{CRATESIOTOKEN}}
