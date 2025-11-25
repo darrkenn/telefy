@@ -7,4 +7,4 @@ steps:
   - name: Dry run publish
     run: cargo publish --dry-run
   - name: Publish to crates.io
-    run: cargo publish --token ${{CRATESIOTOKEN}}
+    run: cargo publish --token ${CRATES_IO_TOKEN}
