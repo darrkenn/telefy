@@ -1,8 +1,7 @@
 [package]
 name = "telefy"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
-authors = ["darrkenn <darragh@mail.darrkenn.com>"]
 description = "A crate to send logging messages to telegram"
 readme = "README.md"
 repository = "https://github.com/darrkenn/telefy"
@@ -10,4 +9,4 @@ license = "MIT"
 keywords = ["api", "logging"]
 
 [dependencies]
-reqwest = { version= "0.12.24", features = ["json"]}
+reqwest = { version = "0.12.24", features = ["json"] }

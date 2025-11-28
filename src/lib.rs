@@ -44,12 +44,12 @@ impl std::fmt::Display for TelefyError {
 impl Error for TelefyError {}
 
 impl TelefyBot {
-    pub fn new(token: String, chat_id: String) -> Result<&'static TelefyBot, &'static str> {
+    pub fn new(token: String, chat_id: String) -> Result<(), &'static str> {
         let telefy_bot = TelefyBot { token, chat_id };
         TELEFYBOT
             .set(telefy_bot)
             .map_err(|_| "TelefyBot already created")?;
-        Ok(TELEFYBOT.get().unwrap())
+        Ok(())
     }
     pub async fn send_message(&self, message: &str) -> Result<(), TelefyError> {
         let client = reqwest::Client::new();
